@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		643B396F251D768C00975AB5 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643B396E251D768C00975AB5 /* DetailsView.swift */; };
+		643B3971251D8B9E00975AB5 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643B3970251D8B9E00975AB5 /* WebView.swift */; };
 		64690A78251D52F80071A944 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690A77251D52F80071A944 /* AppDelegate.swift */; };
 		64690A7A251D52F80071A944 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690A79251D52F80071A944 /* SceneDelegate.swift */; };
 		64690A7C251D52F80071A944 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64690A7B251D52F80071A944 /* ContentView.swift */; };
@@ -15,7 +17,24 @@
 		64690A84251D52FA0071A944 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64690A82251D52FA0071A944 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		64962C62251E599600615432 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.nasm;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "$(DEVELOPER_BIN_DIR)/nasm\n";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
+		643B396E251D768C00975AB5 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
+		643B3970251D8B9E00975AB5 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		643B3972251D8DC500975AB5 /* NathanVCard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NathanVCard.entitlements; sourceTree = "<group>"; };
 		64690A74251D52F80071A944 /* NathanVCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NathanVCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64690A77251D52F80071A944 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64690A79251D52F80071A944 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +56,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		643B396D251D764C00975AB5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				64690A7B251D52F80071A944 /* ContentView.swift */,
+				643B396E251D768C00975AB5 /* DetailsView.swift */,
+				643B3970251D8B9E00975AB5 /* WebView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		64690A6B251D52F80071A944 = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +85,10 @@
 		64690A76251D52F80071A944 /* NathanVCard */ = {
 			isa = PBXGroup;
 			children = (
+				643B3972251D8DC500975AB5 /* NathanVCard.entitlements */,
 				64690A77251D52F80071A944 /* AppDelegate.swift */,
 				64690A79251D52F80071A944 /* SceneDelegate.swift */,
-				64690A7B251D52F80071A944 /* ContentView.swift */,
+				643B396D251D764C00975AB5 /* Views */,
 				64690A7D251D52FA0071A944 /* Assets.xcassets */,
 				64690A82251D52FA0071A944 /* LaunchScreen.storyboard */,
 				64690A85251D52FA0071A944 /* Info.plist */,
@@ -87,6 +117,7 @@
 				64690A72251D52F80071A944 /* Resources */,
 			);
 			buildRules = (
+				64962C62251E599600615432 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -147,7 +178,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				64690A78251D52F80071A944 /* AppDelegate.swift in Sources */,
+				643B3971251D8B9E00975AB5 /* WebView.swift in Sources */,
 				64690A7A251D52F80071A944 /* SceneDelegate.swift in Sources */,
+				643B396F251D768C00975AB5 /* DetailsView.swift in Sources */,
 				64690A7C251D52F80071A944 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,17 +317,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NathanVCard/NathanVCard.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NathanVCard/Preview Content\"";
 				DEVELOPMENT_TEAM = ZT6YFLJWBP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NathanVCard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rlnss.NathanVCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -304,17 +341,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NathanVCard/NathanVCard.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"NathanVCard/Preview Content\"";
 				DEVELOPMENT_TEAM = ZT6YFLJWBP;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = NathanVCard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rlnss.NathanVCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
